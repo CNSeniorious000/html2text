@@ -2,7 +2,7 @@ Html2Text
 =========
 
 1. [About](about.md)
-2. [Authors](../AUTHORS.rst)
+2. [Authors](../AUTHORS.md)
 3. [What is markdown](https://daringfireball.net/projects/markdown/)
 4. [How it works](how_it_works.md)
 5. [Usage](usage.md)

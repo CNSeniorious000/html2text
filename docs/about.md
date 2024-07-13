@@ -1,5 +1,5 @@
 About
------
+=====
 
 html2text is a python package which converts a page of HTML into clean,
 easy-to-read plain ASCII text. Better yet, that ASCII also happens to be

@@ -1,4 +1,4 @@
-``html2text`` was originally written by Aaron Swartz.
+`html2text` was originally written by Aaron Swartz.
 
 The AUTHORS/Contributors are (and/or have been):
 

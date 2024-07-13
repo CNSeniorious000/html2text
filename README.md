@@ -1,9 +1,5 @@
 # html2text
 
-[![CI](https://github.com/Alir3z4/html2text/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Alir3z4/html2text/actions/workflows/main.yml)
-[![codecov](https://codecov.io/gh/Alir3z4/html2text/graph/badge.svg?token=OoxiyymjgU)](https://codecov.io/gh/Alir3z4/html2text)
-
-
 
 html2text is a Python script that converts a page of HTML into clean, easy-to-read plain ASCII text. Better yet, that ASCII also happens to be valid Markdown (a text-to-HTML format).
 
@@ -24,19 +20,16 @@ For a complete list of options see the [docs](https://github.com/Alir3z4/html2te
 
 Or you can use it from within `Python`:
 
-```
+```py
 >>> import html2text
->>>
 >>> print(html2text.html2text("<p><strong>Zed's</strong> dead baby, <em>Zed's</em> dead.</p>"))
 **Zed's** dead baby, _Zed's_ dead.
-
 ```
 
 
 Or with some configuration options:
-```
+```py
 >>> import html2text
->>>
 >>> h = html2text.HTML2Text()
 >>> # Ignore converting links from HTML
 >>> h.ignore_links = True
@@ -51,7 +44,6 @@ Hello, world!
 >>> h.ignore_links = False
 >>> print(h.handle("<p>Hello, <a href='https://www.google.com/earth/'>world</a>!"))
 Hello, [world](https://www.google.com/earth/)!
-
 ```
 
 *Originally written by Aaron Swartz. This code is distributed under the GPLv3.*
@@ -62,18 +54,22 @@ Hello, [world](https://www.google.com/earth/)!
 `html2text` is available on pypi
 https://pypi.org/project/html2text/
 
-```
+```sh
 $ pip install html2text
 ```
 
 
 ## How to run unit tests
 
-    tox
+```sh
+tox
+```
 
 To see the coverage results:
 
-    coverage html
+```sh
+coverage html
+```
 
 then open the `./htmlcov/index.html` file in your browser.
 
