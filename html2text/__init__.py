@@ -1,4 +1,4 @@
-"""html2text: Turn HTML into equivalent Markdown-structured text."""
+"""html2text2: Turn HTML into equivalent Markdown-structured text."""
 
 import html.entities
 import html.parser
@@ -27,7 +27,7 @@ from .utils import (
     unifiable_n,
 )
 
-__version__ = "0.1.0rc0"
+__version__ = "1.0.0"  # forked from `html2text`
 
 
 # TODO:

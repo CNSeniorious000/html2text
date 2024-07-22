@@ -77,7 +77,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: setup python
+      - name: Setup python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -89,3 +89,25 @@ jobs:
 
       - name: Tox-${{ matrix.toxenv }}
         run: uv tool run tox
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build Package
+        run: |
+          pip install uv
+          uv tool run pdm build
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
+          print-hash: true
+          verbose: true
