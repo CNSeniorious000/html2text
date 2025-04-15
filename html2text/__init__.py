@@ -28,7 +28,7 @@ from .utils import (
     unifiable_n,
 )
 
-__version__ = "1.1.0"  # forked from `html2text`
+__version__ = "1.1.1"  # forked from `html2text`
 
 
 # TODO:

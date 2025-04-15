@@ -266,9 +266,7 @@ def main() -> None:
         default=config.CLOSE_QUOTE,
         help="The character used to close quotes",
     )
-    p.add_argument(
-        "--version", action="version", version=".".join(map(str, __version__))
-    )
+    p.add_argument("--version", action="version", version=__version__)
     p.add_argument("filename", nargs="?")
     p.add_argument("encoding", nargs="?", default="utf-8")
     p.add_argument(
