@@ -18,6 +18,7 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 version = { source = "file", path = "html2text/__init__.py" }
+build.excludes = ["test"]
 
 [tool.pdm.dev-dependencies]
 dev = ["pytest>=8.2.2"]
