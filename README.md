@@ -6,14 +6,14 @@ html2text is a Python script that converts a page of HTML into clean, easy-to-re
 
 Usage: `html2text [filename [encoding]]`
 
-| Option                                                 | Description
-|--------------------------------------------------------|---------------------------------------------------
-| `--version`                                            | Show program's version number and exit
-| `-h`, `--help`                                         | Show this help message and exit
-| `--ignore-links`                                       | Don't include any formatting for links
-|`--escape-all`                                          | Escape all special characters.  Output is less readable, but avoids corner case formatting issues.
-| `--reference-links`                                    | Use reference links instead of links to create markdown
-| `--mark-code`                                          | Mark preformatted and code blocks with [code]...[/code]
+| Option              | Description                                                                                        |
+| ------------------- | -------------------------------------------------------------------------------------------------- |
+| `--version`         | Show program's version number and exit                                                             |
+| `-h`, `--help`      | Show this help message and exit                                                                    |
+| `--ignore-links`    | Don't include any formatting for links                                                             |
+| `--escape-all`      | Escape all special characters.  Output is less readable, but avoids corner case formatting issues. |
+| `--reference-links` | Use reference links instead of links to create markdown                                            |
+| `--mark-code`       | Mark preformatted and code blocks with [code]...[/code]                                            |
 
 For a complete list of options see the [docs](https://github.com/Alir3z4/html2text/blob/master/docs/usage.md)
 
@@ -58,8 +58,9 @@ https://pypi.org/project/html2text/
 $ pip install html2text
 ```
 
+##  Development
 
-## How to run unit tests
+### How to run unit tests
 
 ```sh
 tox
@@ -72,6 +73,21 @@ coverage html
 ```
 
 then open the `./htmlcov/index.html` file in your browser.
+
+
+### Code Quality & Pre Commit
+
+The CI runs several linting steps, including:
+
+- mypy
+- Flake8
+- Black
+
+To make sure the code passes the CI linting steps, run:
+
+```shell
+$ tox -e pre-commit
+```
 
 ## Documentation
 

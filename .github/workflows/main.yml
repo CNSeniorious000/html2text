@@ -34,7 +34,7 @@ jobs:
       - name: setup python
         uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.12'
+          python-version: '3.13'
 
       - name: Install Requirements [${{ matrix.toxenv }}]
         run: |
@@ -49,7 +49,6 @@ jobs:
     strategy:
       matrix:
         toxenv:
-          - py38
           - py39
           - py310
           - py311
@@ -57,8 +56,6 @@ jobs:
           - py313
           - pypy3
         include:
-          - toxenv: py38
-            python-version: '3.8'
           - toxenv: py39
             python-version: '3.9'
           - toxenv: py310
@@ -82,7 +79,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Setup python
+      - name: setup python
         uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python-version }}

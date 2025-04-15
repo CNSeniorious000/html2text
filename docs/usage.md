@@ -21,9 +21,9 @@ $ pip install html2text
 Clone the repository from https://github.com/Alir3z4/html2text
 
 ```sh
-$ git clone --depth 1 https://github.com/Alir3z4/html2text.git
-$ python setup.py build
-$ python setup.py install
+$ git clone --depth 50 https://github.com/Alir3z4/html2text.git
+$ python -m build -nwx
+$ python -m pip install --upgrade ./dist/*.whl
 ```
 
 
@@ -117,39 +117,39 @@ Command line options
 --------------------
 
 
-| Option                                                 | Description
-|--------------------------------------------------------|---------------------------------------------------
-| `--version`                                            | Show program version number and exit
-| `-h`, `--help`                                         | Show this help message and exit
-| `--ignore-links`                                       | Do not include any formatting for links
-|`--protect-links`                                       | Protect links from line breaks surrounding them "+" with angle brackets
-|`--ignore-images`                                       | Do not include any formatting for images
-|`--images-as-html`                                      | Always write image tags as raw html; preserves "height", "width" and "alt" if possible.
-|`--images-to-alt`                                       | Discard image data, only keep alt text
-|`--images-with-size`                                    | Write image tags with height and width attrs as raw html to retain dimensions
-|`-g`, `--google-doc`                                    | Convert an html-exported Google Document
-|`-d`, `--dash-unordered-list`                           | Use a dash rather than a star for unordered list items
-|`-b` `BODY_WIDTH`, `--body-width`=`BODY_WIDTH`          | Number of characters per output line, `0` for no wrap
-|`-i` `LIST_INDENT`, `--google-list-indent`=`LIST_INDENT`| Number of pixels Google indents nested lists
-|`-s`, `--hide-strikethrough`                            | Hide strike-through text. only relevant when `-g` is specified as well
-|`--escape-all`                                          | Escape all special characters.  Output is less readable, but avoids corner case formatting issues.
-| `--bypass-tables`                                      | Format tables in HTML rather than Markdown syntax.
-| `--ignore-tables`                                      | Ignore table-related tags (table, th, td, tr) while keeping rows.
-| `--single-line-break`                                  | Use a single line break after a block element rather than two.
-| `--reference-links`                                    | Use reference links instead of inline links to create markdown
-| `--ignore-emphasis`                                    | Ignore all emphasis formatting in the html.
-| `--include-sup-sub`                                    | Include `<sub>` and `<sub>` tags.
-| `-e`, `--asterisk-emphasis`                            | Use asterisk rather than underscore to emphasize text
-| `--unicode-snob`                                       | Use unicode throughout instead of ASCII
-| `--no-automatic-links`                                 | Do not use automatic links like <https://www.google.com/>
-| `--no-skip-internal-links`                             | Turn off skipping of internal links
-| `--links-after-para`                                   | Put the links after the paragraph and not at end of document
-| `--mark-code`                                          | Mark code with [code]...[/code] blocks
-| `--no-wrap-links`                                      | Do not wrap links during text wrapping. Implies `--reference-links`
-| `--wrap-list-items`                                    | Wrap list items during text wrapping.
-| `--wrap-tables`                                        | Wrap tables during text wrapping.
-| `--decode-errors`=`HANDLER`                            | What to do in case an error is encountered. `ignore`, `strict`, `replace` etc.
-| `--pad-tables`                                         | Use padding to make tables look good.
-| `--default-image-alt`=`Image_Here`                     | Inserts the given `alt` text whenever images are missing `alt` values.
-| `--open-quote`=`"`                                     | Inserts the given text when opening a quote. Defaults to `"`.
-| `--close-quote`=`"`                                    | Inserts the given text when closing a quote. Defaults to `"`.
+| Option                                                   | Description                                                                                        |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `--version`                                              | Show program version number and exit                                                               |
+| `-h`, `--help`                                           | Show this help message and exit                                                                    |
+| `--ignore-links`                                         | Do not include any formatting for links                                                            |
+| `--protect-links`                                        | Protect links from line breaks surrounding them "+" with angle brackets                            |
+| `--ignore-images`                                        | Do not include any formatting for images                                                           |
+| `--images-as-html`                                       | Always write image tags as raw html; preserves "height", "width" and "alt" if possible.            |
+| `--images-to-alt`                                        | Discard image data, only keep alt text                                                             |
+| `--images-with-size`                                     | Write image tags with height and width attrs as raw html to retain dimensions                      |
+| `-g`, `--google-doc`                                     | Convert an html-exported Google Document                                                           |
+| `-d`, `--dash-unordered-list`                            | Use a dash rather than a star for unordered list items                                             |
+| `-b` `BODY_WIDTH`, `--body-width`=`BODY_WIDTH`           | Number of characters per output line, `0` for no wrap                                              |
+| `-i` `LIST_INDENT`, `--google-list-indent`=`LIST_INDENT` | Number of pixels Google indents nested lists                                                       |
+| `-s`, `--hide-strikethrough`                             | Hide strike-through text. only relevant when `-g` is specified as well                             |
+| `--escape-all`                                           | Escape all special characters.  Output is less readable, but avoids corner case formatting issues. |
+| `--bypass-tables`                                        | Format tables in HTML rather than Markdown syntax.                                                 |
+| `--ignore-tables`                                        | Ignore table-related tags (table, th, td, tr) while keeping rows.                                  |
+| `--single-line-break`                                    | Use a single line break after a block element rather than two.                                     |
+| `--reference-links`                                      | Use reference links instead of inline links to create markdown                                     |
+| `--ignore-emphasis`                                      | Ignore all emphasis formatting in the html.                                                        |
+| `--include-sup-sub`                                      | Include `<sub>` and `<sup>` tags.                                                                  |
+| `-e`, `--asterisk-emphasis`                              | Use asterisk rather than underscore to emphasize text                                              |
+| `--unicode-snob`                                         | Use unicode throughout instead of ASCII                                                            |
+| `--no-automatic-links`                                   | Do not use automatic links like <https://www.google.com/>                                          |
+| `--no-skip-internal-links`                               | Turn off skipping of internal links                                                                |
+| `--links-after-para`                                     | Put the links after the paragraph and not at end of document                                       |
+| `--mark-code`                                            | Mark code with [code]...[/code] blocks                                                             |
+| `--no-wrap-links`                                        | Do not wrap links during text wrapping. Implies `--reference-links`                                |
+| `--wrap-list-items`                                      | Wrap list items during text wrapping.                                                              |
+| `--wrap-tables`                                          | Wrap tables during text wrapping.                                                                  |
+| `--decode-errors`=`HANDLER`                              | What to do in case an error is encountered. `ignore`, `strict`, `replace` etc.                     |
+| `--pad-tables`                                           | Use padding to make tables look good.                                                              |
+| `--default-image-alt`=`Image_Here`                       | Inserts the given `alt` text whenever images are missing `alt` values.                             |
+| `--open-quote`=`"`                                       | Inserts the given text when opening a quote. Defaults to `"`.                                      |
+| `--close-quote`=`"`                                      | Inserts the given text when closing a quote. Defaults to `"`.                                      |
