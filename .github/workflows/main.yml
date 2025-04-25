@@ -32,7 +32,7 @@ jobs:
           fetch-depth: 0
 
       - name: setup python
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.13'
 
@@ -80,7 +80,7 @@ jobs:
           fetch-depth: 2
 
       - name: setup python
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -99,7 +99,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup python
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
         with:
           python-version: "3.12"
       - name: Build Package
